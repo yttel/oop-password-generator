@@ -6,10 +6,10 @@ const questions = [{
   type: "number",
   message: "What length password do you want? (8-128)",
   name: "pwLength",
-  // validate: function(value) {
-  //   const valid = (value > 8) && (value < 128) && (!isNaN(parseFloat(value)));
-  //   return valid || "Please enter a number between 8 and 128!";
-  // },
+  validate: function(value) {
+    const valid = (value > 8) && (value < 128) && (!isNaN(parseFloat(value)));
+    return valid || "Please enter a number between 8 and 128!";
+  },
   // filter: Number
 },{
   type: "checkbox",
@@ -41,7 +41,6 @@ class App{
         name: "doItAgain",
         message: "Do you want to make another password?"
       }]).then(({doItAgain}) => {
-        console.log(`doItAgain: ${doItAgain[0]}`);
         if ((doItAgain[0] === "y") || (doItAgain[0] === "Y")){
           return this.init();
         }
@@ -60,7 +59,14 @@ class App{
         console.log(`Your new password is: ${password.getPassword()}`);
         
         //copy to clipboard?
+
+        // function copyToClipboard() {
+        //   document.getElementById('newPassword').select();
+        //   document.execCommand('copy');
+        // }
         
+        // write password to 'clipboard'
+        // console.log(`Your new password has been copied to clipboard.`);
 
         //would you like to make another password?
         return this.makeAnother();    

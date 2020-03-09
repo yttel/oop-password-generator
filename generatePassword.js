@@ -1,5 +1,3 @@
-
-
 class GeneratePassword {
   static generate(pwLength, types){
     const lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -22,7 +20,7 @@ class GeneratePassword {
     if (types.includes("S")){
       charOptions+=specialChars;
     }
-    //console.log(`charOptions: ${charOptions}`);
+
     for (let i=0; i < pwLength; i++){
       const randNum = Math.floor(Math.random() * (charOptions.length));
       console.log(`randNum: ${randNum}`);
