@@ -4,7 +4,7 @@ const GeneratePassword = require("./generatePassword");
 
 const questions = [{
   type: "number",
-  message: "What length password do you want? (8-128)",
+  message: "\nWhat length password do you want? (8-128)",
   name: "pwLength",
   validate: function(value) {
     const valid = (value > 8) && (value < 128) && (!isNaN(parseFloat(value)));
@@ -56,7 +56,7 @@ class App{
         const genPassword = GeneratePassword.generate(pwLength, charTypes.map((word) => word[0]));
         const password = new Password(genPassword);
 
-        console.log(`Your new password is: ${password.getPassword()}`);
+        console.log(`\nYour new password is: ${password.getPassword()}\n`);
         
         //copy to clipboard?
 
@@ -64,7 +64,7 @@ class App{
         //   document.getElementById('newPassword').select();
         //   document.execCommand('copy');
         // }
-        
+
         // write password to 'clipboard'
         // console.log(`Your new password has been copied to clipboard.`);
 

@@ -22,9 +22,7 @@ class GeneratePassword {
     }
 
     for (let i=0; i < pwLength; i++){
-      const randNum = Math.floor(Math.random() * (charOptions.length));
-      console.log(`randNum: ${randNum}`);
-      password += charOptions[randNum]; 
+      password += charOptions[Math.floor(Math.random() * (charOptions.length))]; 
     }
     return password;
   }
