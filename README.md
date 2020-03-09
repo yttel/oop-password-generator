@@ -13,9 +13,11 @@ Your CLI should _not_ have procedural code, or code that is not a method on a cl
 
 [github source](https://github.com/yttel/oop-password-generator)
 
+[Use example (YouTube)](https://github.com/yttel/oop-password-generator)
+
 ## Use Example
 
-![Use example](pwgenerator.png)
+![Use example](pwgenerator.gif)
 
 ## Known Issues
 
