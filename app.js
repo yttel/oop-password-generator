@@ -4,11 +4,11 @@ const GeneratePassword = require("./generatePassword");
 
 const questions = [{
   type: "number",
-  message: "\nWhat length password do you want? (8-128)",
+  message: "What length password do you want? (8-128)",
   name: "pwLength",
   validate: function(value) {
     const valid = (value > 8) && (value < 128) && (!isNaN(parseFloat(value)));
-    return valid || "Please enter a number between 8 and 128!";
+    return valid || "Please enter a number between 8 and 128! (down arrow to clear)";
   },
   // filter: Number
 },{
@@ -18,12 +18,16 @@ const questions = [{
   choices: [
     {
       name: "Lower case letters",
+      //value: "L"
     },{
-      name: "Upper case letters"
+      name: "Upper case letters",
+      //value: "U"
     },{
-      name: "Numbers"
+      name: "Numbers",
+      //value: "N"
     },{
-      name: "Special characters"
+      name: "Special characters",
+      //value: "S"
     }],
   validate: function(answer) {
     if (answer.length < 1) {
